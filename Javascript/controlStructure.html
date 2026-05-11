@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Structure</title>
+</head>
+
+<body>
+
+    <!-- <label for="result">Enter Your Number</label> <br>
+    <input type="text" name="result" id="result"> <br>
+    <button id="btn">Submit</button> <br>
+    <h1 id="output_id"></h1> -->
+
+    <label for="nuber1">Number1</label>
+    <input type="text" id="number1"> <br>
+    <label for="nuber2">Number2</label>
+    <input type="text" id="number2"> <br>
+    <label for="nuber3">Number3</label>
+    <input type="text" id="number3"> <br> <br>
+    <button id="btn">Submit</button>
+
+    <h2 id="output_id"></h2>
+
+    <script>
+
+        // let name = "Hasan1";
+        // let brother = "Masud";
+
+        //  if(name == "Hasan"){
+        //     console.log("Open The Get"); 
+        //  }
+        //  if(name == "Hasan"){
+        //     console.log(`Open The Gate For ${name}`); 
+        //  }else{
+        //      console.log(`Dont open the gate`); 
+        //  }
+
+        // if(name == "Hasan"){
+        // console.log(`Open The Gate For ${name}`); 
+        // }else if(brother == "Masud"){
+        //     console.log(`Open The Gate For ${brother}`);   
+        // }else{
+        //     console.log("Dont open the gate");
+        // }
+
+        //   nagative or positive number 
+
+        //    let number =  prompt("Give me a Nuber");
+        //        number= Number(number);
+
+        //    let number= 10;
+        //    if(number > 0){
+        //        console.log("Positive Number");  
+        //    }else if(number == 0){
+        //       console.log("Invalid Number");
+        //    }else{
+        //      console.log("Negative Number");
+        //    }
+
+
+        //    let result =Number(prompt("Give me the number"));
+        //    if(result >= 50){
+        //       alert("pass")
+        //    }else{
+        //      alert("fail")
+        //    }
+
+        // let  name2 = "Hasib";
+        // let  country = prompt("Enter Your Country Name").toLowerCase();
+        // let  age = Number(prompt("Enter Your Country Age"));
+
+        //  if(country == "bangladesh"){
+        //      if(age >= 21){
+        //          console.log("Get the license"); 
+        //      }else{
+        //          console.log("Did not Get the license"); 
+        //      }
+        //  }else if (country == "usa"){
+        //       if(age >= 18){
+        //          console.log("Get the license"); 
+        //       }else{
+        //         console.log("Did not Get the license"); 
+        //       }
+        //  }else{
+        //     console.log("invalid country name"); 
+        //  }
+
+        // document.getElementById("btn").onclick = function () {
+        //     let result = Number(document.getElementById("result").value) ;
+        //     let output= document.getElementById("output_id");
+
+        //     if (result >= 80) {
+        //         output.style.color="green";
+        //         output.innerText= "A+";
+        //     } else if (result >= 70) {
+        //         output.style.color="green";
+        //         output.innerText= "A";
+        //     } else if (result >= 60) {
+        //         output.style.color="green";
+        //        output.innerText= "A-";
+        //     } else {
+        //         output.style.color="red";
+        //         output.innerText= "Fail";
+        //     }
+
+        // }
+
+
+        // let result = Number(prompt("Enter your number")) ;               // 80>= A+   70>= A    60>=A-    fail 
+
+        // if (result >= 80) {
+        //     console.log("A+");
+        // } else if (result >= 70) {
+        //     console.log("A");
+        // } else if (result >= 60) {
+        //     console.log("A-");
+        // } else {
+        //     console.log("Fail");
+        // }
+
+        // let a =  Number(prompt("Enter the 1st number")) ;
+        // let b =  Number(prompt("Enter the 2nd number"));
+        // let c =  Number(prompt("Enter the 3rd number"));
+
+        //  if(a > b){
+        //      console.log("a is grater than b"); 
+        //  }else{
+        //       console.log("b is grater than a");
+        //  }
+
+        // if (a > b) {
+        //     if (a > c) {
+        //         console.log("A is the biggest number");
+        //     } else {
+        //         console.log("C is the biggest number");
+        //     }
+        // } else if (b > a) {
+        //     if (b > c) {
+        //         console.log("B is the biggest number");
+        //     } else {
+        //         console.log("C is the biggest number");
+        //     }
+        // }
+
+
+
+
+        // let a =  Number(prompt("Enter the 1st number")) ;
+        // let b =  Number(prompt("Enter the 2nd number"));
+        // let c =  Number(prompt("Enter the 3rd number"));
+
+        // if( a > b &&  a > c ){
+        //      console.log(`${a} is the biggest number among ${a}, ${b}, ${c}`);
+        // }else if(b > a && b > c){
+        //       console.log(`${b} is the biggest number among ${a}, ${b}, ${c}`);
+        // }else{
+        //      console.log(`${c} is the biggest number among ${a}, ${b}, ${c}`);
+        // }
+
+
+        // document.getElementById("btn").onclick = function () {
+
+        //     let a = Number(document.getElementById("number1").value);
+        //     let b = Number(document.getElementById("number2").value);
+        //     let c = Number(document.getElementById("number3").value);
+
+        //     let output = document.getElementById("output_id");
+
+        //     if (a > b && a > c) {
+        //         output.innerText = `${a} is the biggest number among ${a}, ${b}, ${c}`;
+        //     } else if (b > a && b > c) {
+        //         output.innerText = `${b} is the biggest number among ${a}, ${b}, ${c}`;
+        //     } else {
+        //         output.innerText = `${c} is the biggest number among ${a}, ${b}, ${c}`;
+        //     }
+        // }
+
+
+         //   saturday-6 sunday-7  monday-1 tuesday-2 wednesday-3 thursday-4 fryday-5 
+
+        //   let day = 5;
+
+        //   switch(new Date().getDay()){
+        //      case 1:
+        //         console.log("Today is Monday");
+        //      break;
+        //       case 2:
+        //         console.log("Today is tuesday");
+        //      break;
+        //       case 3:
+        //         console.log("Today is wednesday");
+        //      break;
+        //       case 4:
+        //         console.log("Today is thursday");
+        //      break;
+        //       case 5:
+        //         console.log("Today is fryday");
+        //      break;
+        //       case 6:
+        //         console.log("Today is saturday");
+        //      break;
+        //      default:
+        //         console.log("Today is sunday");
+        //   }
+
+
+      //    ternary operator
+         let age = 14;
+         let message;
+          if(age >= 21){
+             message=  "Get the licnese"
+          }else{
+              message= "did not get the license"
+          }
+
+    let message2 = age >= 21 ? "Get the licnese" : "did not get the license";
+    console.log(message);
+    console.log(message2);
+      
+    let isStudent = true;
+    let message3 =  isStudent ? "you are a student":"you are not a student";
+
+     let cost = 150;
+     
+     let discount = cost >= 150 ? 10/100 : 0;
+     let total = cost -  cost * discount ;
+     console.log(total);
+     
+   
+     let a = 10;
+     let b= "10";
+
+    //   !==
+    //   !==
+
+
+     if(a === b){+
+       console.log( "a equal to b");
+     }else{
+        console.log( "a not equal to b");
+     }
+
+
+
+
+     console.log(a, b);
+     
+
+
+        // loop 
+
+        // initialization
+        // condition 
+        // increment 
+
+
+          
+        // for (let i = 1; i <=10; i++) {
+        //      console.log(`${i} I Love Bangladesh`);   
+        // }
+
+        // for(let i = 10; i >= 1; i--){
+        //      console.log(i);  
+        // }
+
+   
+
+    // while loop 
+        // let i= 1;
+        // while(i<=10){
+        //   console.log(i);
+        //   i++;
+        // }
+
+        // let password="1234";
+        // let input= "" ;
+        // let times=3;
+        
+        // while(input != password){
+        //    input=  prompt(`Enter Your Password. you have ${times} chance`);  
+        //    times--;
+
+        //    if(times == 0){
+        //      alert("You have entered wrong password to many times")
+        //      break;
+        //    }
+        // } 
+
+    // do while 
+      
+    //  let j=1;
+    //    do{
+    //      console.log(j); 
+    //      j++
+    //    }while(j<=10) 
+  
+    //   let foods=[];
+    //   let input="";
+    //   do{
+    //      input= prompt("Enter your food name");
+         
+    //      if(input != "exit"){
+    //          foods.push(input)
+    //      }
+
+    //   }while(input != "exit")
+
+    //   console.log(foods);
+
+    //  foreach loop 
+ 
+
+//    let students=["Hasan", "khalid", "Mahmud"];
+
+//    students.forEach(  student => {
+//       document.write("<p> Name:"+ student + "</p>" );
+//    });
+
+//     for (let i = 0; i < students.length; i++) {
+//        document.write("<p> Name:"+ students[i] + "</p>" );
+//     }
+   
+//     for(stu of students){
+//        document.write(`<p> ${stu}</P>`);  
+//     }
+
+
+  
+       
+    </script>
+</body>
+
+</html>

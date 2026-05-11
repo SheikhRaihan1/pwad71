@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Manupulation</title>
+</head>
+
+<body>
+       <h1>Prime Number</h1> 
+
+       <label for="number">Enter a Number</label> <br>
+       <input type="number" id="number"> <br> <br>
+       <button id="btn" onclick="abc()">Submit</button> <br>
+
+        <h1 id="result"></h1>
+
+    <script>
+        
+        // document.querySelector("#btn").onclick=function(){
+        //     alert();
+        // }
+
+        function abc(){
+           let inputValue= document.querySelector(`#number`).value;
+           //console.log (inputValue);
+           let output= document.querySelector("#result"); 
+           
+            function isPrime(number){
+              if(number < 2) {return false};
+
+              for(let i = 2; i< number; i++){
+                   if(number % i == 0){
+                     return false;
+                 }
+              }
+               return true;
+            }
+           output.innerText=  isPrime(inputValue) ? `${inputValue} is a prime number`:`${inputValue} is not a prime number`
+        }
+        
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer Portfolio | Bootstrap Only</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+</head>
+<body class="bg-light text-dark">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-lg-3" href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="vh-100 d-flex align-items-center bg-white border-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h1 class="display-2 fw-bold text-dark mb-3">Hi, I'm <span class="text-primary">Alex Chen</span>.</h1>
+                    <p class="lead text-secondary mb-4 fs-4">A Full-Stack Software Engineer specializing in scalable cloud architectures and high-performance web applications.</p>
+                    <div class="d-grid d-md-flex gap-3">
+                        <a href="#projects" class="btn btn-primary btn-lg px-4 py-3 rounded-3 shadow">View My Work</a>
+                        <a href="#experience" class="btn btn-outline-dark btn-lg px-4 py-3 rounded-3">Read Resume</a>
+                    </div>
+                </div>
+                <div class="col-lg-5 d-none d-lg-block text-center">
+                    <img src="download.jfif" alt="Profile" class="img-fluid  shadow-lg border border-5 border-white">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-6">
+                    <h2 class="fw-bold mb-4 border-start border-primary border-5 ps-3">About Me</h2>
+                    <p class="text-muted lh-lg">
+                        I am a passionate problem solver with over 5 years of experience building digital products. 
+                        My approach focuses on clean code, performance optimization, and user-centric design.
+                    </p>
+                    <p class="text-muted lh-lg">
+                        Currently, I am focused on building AI-driven interfaces and improving microservices communication 
+                        within distributed systems.
+                    </p>
+                </div>
+                
+                <div id="skills" class="col-md-6">
+                    <h2 class="fw-bold mb-4">Technical Stack</h2>
+                    <div class="vstack gap-3">
+                        <div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">Node.js & TypeScript</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress rounded-pill" style="height: 8px;">
+                                <div class="progress-bar bg-primary" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">React / Next.js</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress rounded-pill" style="height: 8px;">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="d-flex justify-content-between mb-1">
+                                <span class="fw-bold">AWS & Docker</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress rounded-pill" style="height: 8px;">
+                                <div class="progress-bar bg-dark" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-5 bg-white">
+        <div class="container py-5 text-center">
+            <h2 class="fw-bold mb-2">Featured Projects</h2>
+            <p class="text-muted mb-5">Click on a project to view details and source code.</p>
+            
+            <div class="row g-4 text-start">
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm transition-hover">
+                        <img src="hive-creative-1.webp" class="card-img-top rounded-top" alt="Project 1">
+                        <div class="card-body p-4">
+                            <span class="badge bg-primary-subtle text-primary mb-2">E-Commerce</span>
+                            <h5 class="card-title fw-bold">Cloud-Scale Marketplace</h5>
+                            <p class="card-text text-muted small">Built a high-concurrency marketplace handling 10k+ requests/sec using Redis and Node.js.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-3 stretched-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="microsoft_project_standard.jpg" class="card-img-top rounded-top" alt="Project 2">
+                        <div class="card-body p-4">
+                            <span class="badge bg-success-subtle text-success mb-2">AI / ML</span>
+                            <h5 class="card-title fw-bold">Neural Sentiment Bot</h5>
+                            <p class="card-text text-muted small">An automated customer support agent using OpenAI API and Python to route tickets based on mood.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-3 stretched-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="hive-creative-1.webp" class="card-img-top rounded-top" alt="Project 3">
+                        <div class="card-body p-4">
+                            <span class="badge bg-info-subtle text-info mb-2">DevOps</span>
+                            <h5 class="card-title fw-bold">CI/CD Pipeline Tool</h5>
+                            <p class="card-text text-muted small">A custom dashboard for monitoring Kubernetes deployments across multiple clusters.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-3 stretched-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <img src="hive-creative-1.webp" class="card-img-top rounded-top" alt="Project 3">
+                        <div class="card-body p-4">
+                            <span class="badge bg-info-subtle text-info mb-2">DevOps</span>
+                            <h5 class="card-title fw-bold">CI/CD Pipeline Tool</h5>
+                            <p class="card-text text-muted small">A custom dashboard for monitoring Kubernetes deployments across multiple clusters.</p>
+                            <a href="#" class="btn btn-outline-primary btn-sm mt-3 stretched-link">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="py-5 bg-light">
+        <div class="container py-5">
+            <h2 class="fw-bold mb-5 text-center">Professional Journey</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="border-start border-2 border-primary ps-4">
+                        <div class="mb-5 position-relative">
+                            <div class="position-absolute bg-primary rounded-circle" style="width: 15px; height: 15px; left: -32px; top: 5px;"></div>
+                            <h4 class="fw-bold mb-1">Senior Software Engineer</h4>
+                            <p class="text-primary fw-bold small">TechNova Solutions | 2021 - Present</p>
+                            <p class="text-muted mt-2 text-decoration-none">
+                                Led a team of 5 developers to migrate legacy monolith systems to AWS microservices, 
+                                resulting in a 40% reduction in server costs.
+                            </p>
+                        </div>
+                        <div class="mb-4 position-relative">
+                            <div class="position-absolute bg-secondary rounded-circle" style="width: 15px; height: 15px; left: -32px; top: 5px;"></div>
+                            <h4 class="fw-bold mb-1">Frontend Developer</h4>
+                            <p class="text-primary fw-bold small">Digital Canvas Inc | 2018 - 2021</p>
+                            <p class="text-muted mt-2">
+                                Developed responsive web interfaces using React and Redux. Improved lighthouse performance 
+                                scores from 65 to 98 across all client sites.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 bg-white text-dark">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-5">
+                    <h2 class="fw-bold mb-4">Let's Connect</h2>
+                    <p class="text-muted mb-4">I'm currently open to freelance opportunities and full-time senior engineering roles.</p>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-geo-alt fs-4 text-primary me-3"></i>
+                        <span>San Francisco, CA</span>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <i class="bi bi-envelope fs-4 text-primary me-3"></i>
+                        <span>alex.chen@example.com</span>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <form class="row g-3 p-4 bg-light rounded-4 shadow-sm">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="name" placeholder="Name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input type="email" class="form-control" id="email" placeholder="Email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating">
+                                <textarea class="form-control" placeholder="Message" id="msg" style="height: 150px"></textarea>
+                                <label for="msg">Project Details</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-5 bg-dark text-center text-white-50">
+        <div class="container">
+            <div class="mb-4">
+                <a href="#" class="text-white-50 mx-2 fs-3"><i class="bi bi-github"></i></a>
+                <a href="#" class="text-white-50 mx-2 fs-3"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-white-50 mx-2 fs-3"><i class="bi bi-twitter-x"></i></a>
+            </div>
+            <p class="small mb-0">&copy; 2024 Alex Chen. Built with Bootstrap 5.3.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

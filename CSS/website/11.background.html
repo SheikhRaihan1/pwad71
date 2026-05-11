@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            min-height: 100vh;
+            background-image: url(background.webp);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .nav{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            padding: 20px 5%;
+            background-color: transparent;
+        }
+
+        .logo{
+             color: white;
+             font-size: 25px;
+             font-weight: bold;
+        }
+
+        .menu ul{
+             display: flex;
+             list-style: none;
+        }
+        .menu ul li{
+             margin-left: 15px;
+        }
+        .menu ul li a{
+           text-decoration: none;
+           color: #fff;
+           cursor: pointer;
+           position: relative;
+           font-size: 15px;
+        }
+
+        .menu ul li a::before{
+            position: absolute;
+            content: "";
+            height: 2px;
+            width: 0%;
+            background-color: red;
+            top: 100%;
+            left: 0;
+            transition: .3s;
+        }
+        .menu ul li a:hover::before {
+            width: 100%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="logo">Logo</div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- <title>: Defines the document title shown in browser tabs -->
+  <title>All HTML Tags  Example Reference</title>
+
+  <!-- <meta>: Metadata such as character encoding → UTF‑8 -->
+  <meta charset="UTF-8">
+
+  <!-- <base>: Sets the base URL for all relative URLs in the page -->
+  <!-- <base href="https://example.com/"> -->
+
+  <!-- <link>: External resource link – here, a stylesheet placeholder -->
+  <link rel="stylesheet" href="styles.css">
+
+  <link rel="icon" type="image/x-icon" href="images/favicon-96x96.png">
+
+
+
+
+
+  <!-- <style>: Embedded CSS -->
+  <style>
+    body{font-family:system-ui;margin:1rem;}
+    section.demo{border:1px dashed #aaa;padding:.5rem;margin:.5rem 0;}
+    table,th,td{border:1px solid #555;border-collapse:collapse;padding:.25rem;}
+  </style>
+
+  <!-- <script>: Embedded JavaScript -->
+  <script>
+    // Simple inline script
+    console.log("Script tag works!");
+  </script>
+
+  <!-- <noscript>: Fallback content when JS is disabled -->
+  <noscript>Your browser does not support JavaScript!</noscript>
+
+
+</head>
+<body>
+  <!-- <header>: Introductory content or site branding -->
+  <header class="demo">Header (content usually includes logo, nav, etc.)
+
+<!-- <nav>: Section containing navigation links -->
+    <nav class="demo">
+        <a href="#main">Skip to main</a> | <a href="#contact">Contact</a>
+        <div class="logo">
+            <img src="" alt="" srcset="">
+        </div>
+        
+
+      </nav>
+    
+
+  </header>
+
+  
+  <!-- <main>: Unique, dominant content of the page -->
+  <main id="main" class="demo">
+
+    <!-- <article>: Self‑contained composition that could be independently reused  -->
+    <article class="demo">
+      <h1>Article Heading (<code>&lt;h1&gt;</code>)</h1>
+      <p>Paragraph (<code>&lt;p&gt;</code>) inside article.</p>
+    </article>
+
+    <!-- <section>: Thematic grouping of content -->
+    <section class="demo">
+      <h2>Section Example</h2>
+      <p>Another paragraph.</p>
+    </section>
+
+    <!-- <aside>: Content indirectly related to the main flow -->
+    <aside class="demo">Sidebar/Aside content.</aside>
+
+    <!-- <address>: Contact information -->
+    <address class="demo" id="contact">123 HTML Lane, Web City</address>
+
+    <!-- --- Text Semantics ------------------------------------------------- -->
+    <section class="demo">
+      <!-- <a>: Hyperlink -->
+      <a href="https://developer.mozilla.org/">MDN Web Docs</a><br>
+
+      <!-- Emphasis & importance → <em>, <strong> -->
+      <em>Emphasized</em>, <strong>Strong importance</strong><br>
+
+      <!-- <small>: Side comment -->
+      <small>Fine print</small><br>
+
+      <!-- <s>: Inaccurate text -->
+      <s>Out‑dated info</s><br>
+
+      <!-- <cite>: Work title -->
+      <cite>HTML Living Standard</cite><br>
+
+      <!-- <q>: Inline quotation -->
+      <q cite="https://www.w3.org/">W3C</q><br>
+
+      <!-- <dfn>: Term definition -->
+      <dfn id="html">HTML</dfn> stands for HyperText Markup Language.<br>
+
+      <!-- <abbr>: Abbreviation -->
+      <abbr title="World Wide Web">WWW</abbr><br>
+
+      <!-- <time>: Time or date -->
+      <time datetime="2025-06-16">June 16 2025</time><br>
+
+      <!-- <code>, <var>, <samp>, <kbd>: Code-related semantics -->
+      <code>&lt;div&gt;</code>, <var>x</var>=<samp>5</samp>, press <kbd>Ctrl</kbd>+<kbd>S</kbd><br>
+
+      <!-- <sub>, <sup>: Subscript & superscript -->
+      H<sub>2</sub>O, 10<sup>2</sup>=100<br>
+
+      <!-- <i>, <b>, <u>, <mark>: Presentational text -->
+      <i>Italic</i>, <b>Bold</b>, <u>Underline</u>, <mark>Highlight</mark><br>
+
+      <!-- East‑Asian typography → <ruby>, <rb>, <rt>, <rtc>, <rp> -->
+      <ruby>漢<rb></rb><rt>kan</rt></ruby><br>
+
+      <!-- <bdi>: Bi‑directional isolation -->
+      <bdi dir="rtl">مرحبا</bdi><br>
+
+      <!-- <bdo>: Direction override -->
+      <bdo dir="rtl">This text runs right‑to‑left</bdo><br>
+
+      <!-- <span>: Generic inline container -->
+      <span style="color:teal">Span element</span><br>
+
+      <!-- <br>, <wbr>: Line break & optional break -->
+      Line<br>break here<wbr>allowWrap
+
+      <!-- <ins>, <del>: Edits -->
+      <p>This sentence has <del>an error</del> <ins>been fixed</ins>.</p>
+    </section>
+
+    <!-- --- Content Grouping ---------------------------------------------- -->
+    <section class="demo">
+      <!-- <div>: Generic block container -->
+      <div>A generic <code>&lt;div&gt;</code> block.</div>
+
+      <!-- <hr>: Thematic break -->
+      <hr>
+
+      <!-- <pre>: Preformatted text -->
+      <pre>Pre
+formatted
+ text</pre>
+
+      <!-- <blockquote>: Extended quotation -->
+      <blockquote cite="https://example.com/">Block quotation example.</blockquote>
+
+      <!-- Lists → <ol>, <ul>, <li> -->
+      <ol><li>Ordered item 1</li><li>Item 2</li></ol>
+      <ul><li>Unordered item A</li><li>Item B</li></ul>
+
+      <!-- Description list → <dl>, <dt>, <dd> -->
+      <dl>
+        <dt>HTML</dt><dd>Markup language</dd>
+        <dt>CSS</dt><dd>Style sheets</dd>
+      </dl>
+
+      <!-- Figure with caption → <figure>, <figcaption> -->
+      <figure>
+        <img src="images/1.jpg" alt="Placeholder" width="200">
+        <figcaption>Placeholder image</figcaption>
+      </figure>
+    </section>
+
+    <!-- --- Media ---------------------------------------------------------- -->
+    <section class="demo">
+      <!-- Responsive images → <picture>, <source>, <img> -->
+      <picture>
+        <source srcset="images/1.jpg" media="(max-width:600px)">
+        <img src="images/1.jpg" alt="Sample">
+      </picture>
+
+      <!-- <iframe>: Embedded browsing context -->
+      <iframe src="https://example.com" width="200" height="120" title="iframe example"></iframe>
+
+      <!-- <embed>: General external content (e.g., PDF) -->
+      <embed src="sample.pdf" type="application/pdf" width="200" height="120">
+
+      <!-- Plug‑in container → <object> with nested <param> -->
+      <object data="movie.swf" type="application/x-shockwave-flash" width="200" height="120">
+        <param name="autoplay" value="false">
+      </object>
+
+      <!-- Multimedia → <video>, <audio>, <track> -->
+      <video width="200" controls>
+        <source src="movie.mp4" type="video/mp4">
+        <!-- for subtitle -->
+        <track kind="captions" src="subs.vtt" srclang="en"> 
+      </video>
+
+      <audio controls>
+        <source src="sound.ogg" type="audio/ogg">
+      </audio>
+
+      <!-- Image map → <map>, <area> -->
+      <img src="planets.jpg" usemap="#planetmap" alt="Planets" width="200" height="65">
+      <map name="planetmap">
+        <area shape="rect" coords="0,0,82,65" href="mercury.html" alt="Mercury">
+      </map>
+
+      <!-- <canvas>: Bitmap drawing area -->
+      <canvas id="c" width="150" height="80">Your browser lacks canvas support.</canvas>
+      <script>
+        const ctx=document.getElementById('c').getContext('2d');
+        ctx.fillRect(10,10,50,50);
+      </script>
+    </section>
+
+    <!-- --- Tables --------------------------------------------------------- -->
+    <section class="demo">
+      <table>
+        <!-- <caption>: Table caption -->
+        <caption>Sample Table</caption>
+        <!-- Column group → <colgroup>, <col> -->
+        <colgroup>
+          <col span="2" style="background:#eee;">
+        </colgroup>
+        <thead>
+          <tr><th>Head 1</th><th>Head 2</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Row1‑A</td><td>Row1‑B</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Footer</td></tr>
+        </tfoot>
+      </table>
+    </section>
+
+    <!-- --- Forms ---------------------------------------------------------- -->
+    <section class="demo">
+      <form action="/submit" method="post">
+        <!-- <fieldset>: Groups controls, <legend>: Caption for group -->
+        <fieldset>
+          <legend>Login</legend>
+
+          <!-- <label>: Control caption, <input>: Data entry -->
+          <label>Username <input name="user" required></label><br>
+
+          <!-- Password field -->
+          <label>Password <input type="password" name="pass"></label><br>
+
+          <!-- <select>, <optgroup>, <option>, <datalist> for suggestions -->
+          <label>Country
+            <select name="country">
+              <optgroup label="Asia">
+                <option>Bangladesh</option>
+            </optgroup>
+              <optgroup label="Europe">
+                <option>Germany</option>
+              </optgroup>
+            </select>
+          </label><br>
+
+          <label>Favorite color <input list="colors"></label>
+          <datalist id="colors">
+            <option value="Red"><option value="Green"><option value="Blue">
+          </datalist><br>
+
+          <!-- <textarea>: Multi‑line input -->
+          <label>Bio<br><textarea name="bio" rows="2" cols="20"></textarea></label><br>
+
+          <!-- <output>: Calculation result -->
+          <output name="result">0</output><br>
+
+          <!-- <progress>, <meter>: Task & measurement -->
+          Progress: <progress value="0.6" max="1"></progress><br>
+          Disk usage: <meter value="70" min="0" max="100">70%</meter><br>
+
+          <!-- Buttons -->
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </fieldset>
+      </form>
+    </section>
+
+    <!-- --- Interactive ---------------------------------------------------- -->
+    <section class="demo">
+      <!-- <details> & <summary>: Disclosure widget -->
+      <details>
+        <summary>Click to expand</summary>
+        Hidden details text.
+      </details>
+
+      <!-- <dialog>: Modal dialog -->
+      <dialog id="d">
+        <p>Dialog content</p>
+        <button onclick="this.closest('dialog').close()">Close</button>
+      </dialog>
+      <button onclick="document.getElementById('d').showModal()">Open Dialog</button>
+    </section>
+
+  </main>
+
+  <!-- <footer>: Footer content -->
+  <footer class="demo">© 2025 All HTML Tags Demo</footer>
+  <script>
+    let x=10
+  </script>
+</body>
+</html>

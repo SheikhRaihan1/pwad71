@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>CRUD</h1>
+
+    <script>
+        let newProduct= {id:5, name:"phone", price:1500, img:"phone.jpg", qty:1, description:"good"};
+        
+        let products=[
+            {id:1, name:"pen", price:20, img:"pen.jpg", qty:1, description:"good"},
+            {id:2, name:"pencill", price:15, img:"pencill.jpg", qty:1, description:"good"},
+            {id:3, name:"notebook", price:25, img:"notebook.jpg", qty:1, description:"good"},
+            {id:4, name:"foodbox", price:250, img:"foodbox.jpg", qty:1, description:"good"},
+        ];
+
+        // read 
+        // products.forEach((product)=>{
+        //    console.log(product.price, product.name);
+           
+        // });
+
+        // update 
+      let newproducts = products.map((product)=>{
+             if(product.id == 3){
+                return  {...product, price:35}
+             }
+             return product;
+        })
+ 
+        console.log("products",products);
+        console.log("newproducts",newproducts);
+        
+    //     // Delete 
+    //    products = products.filter((product)=>{
+    //        return product.id != 4;
+    //    });
+
+    //    console.log("Delete",products);
+    // //   create 
+    
+       products.push(newProduct);
+       products= [...products, newProduct];
+
+    //  console.log("create",products);
+     
+
+
+
+    </script>
+</body>
+</html>

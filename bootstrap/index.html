@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- 
+      margin    m   t b s e  x y
+      padding   p   t b s e  x y
+      gutter    g   x y
+   -->
+
+  <style>
+    .content {
+      display: flex;
+    }
+
+    .img_div {
+      width: 50%;
+    }
+
+    .text_div {
+      width: 50%;
+    }
+
+    @media (max-width: 480px) {
+      .img_div {
+        width: 100%;
+      }
+
+      .text_div {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px) {
+      .img_div {
+        width: 100%;
+      }
+
+      .text_div {
+        width: 100%;
+      }
+    }
+
+    */
+    /* Tablets */
+    @media (min-width: 768px) and (max-width: 1023px) {}
+
+    /* Laptops/Desktops */
+    @media (min-width: 1024px) {}
+  </style>
+
+<body>
+  <header>
+
+  </header>
+  <main>
+    <div class="container">
+      <div class="row m-3  ">
+        <div class=" text-end bg-primary   col-12  col-xxl-6    col-xl-3  col-lg-2  col-md-7  col-sm-12  ">Column1</div>
+        <div class="  bg-secondary col-12  col-xxl-3    col-xl-3  col-lg-8  col-md-3  col-sm-12  ">Column2</div>
+        <div class="  bg-info      col-12  col-xxl-3    col-xl-6  col-lg-2  col-md-2  col-sm-12  ">Column3</div>
+      </div>
+
+      <div class="row">
+        <p class="display-1">Lorem ipsum dolor sit amet.</p>
+        <p class="h1">Lorem ipsum dolor sit amet.</p>
+        <p class="text-decoration-line-through">Lorem ipsum dolor sit amet.</p>
+      </div>
+
+      <div class="row content">
+        <div class="col-12  col-md-6">
+          <img src="images/modern-laptop-notebooks-cup.webp" alt="" class="img-fluid rounded img-thumbnail">
+        </div>
+        <div class="col-12 col-md-6">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolorem architecto dolore ad reprehenderit voluptas
+          facere, labore itaque neque quibusdam similique incidunt optio perspiciatis deserunt et nam odit sint eveniet
+          fugiat?
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+
+          <table class="table table-success table-borderless table-hover">
+            <thead>
+              <tr class="table-dark">
+                <th>Id</th>
+                <th>name</th>
+                <th>Class</th>
+                <th>Email</th>
+                <th>Address</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="table-active">
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr class="table-info">
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr class="table-danger">
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+              <tr>
+                <td>101</td>
+                <td>Masud</td>
+                <td>12</td>
+                <td>masud@gmail.com</td>
+                <td>Dhaka</td>
+              </tr>
+            </tbody>
+          </table>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col text-center">
+          <figure class="figure">
+            <img src="images/modern-laptop-notebooks-cup.webp" class="figure-img img-fluid rounded" alt="...">
+            <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-6">
+          <form action="#" class="was-validated">
+            <div class="mb-3">
+              <label class="form-label" for="name">Name</label>
+              <input class="form-control" type="text" name="name" id="name" required>
+              <div class="valid-feedback">
+               Looks good!
+             </div>
+              <div class="invalid-feedback">
+                must feel the name field
+             </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="email">Email</label>
+              <input class="form-control" type="text" name="email" id="email" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="address">Address</label>
+              <input class="form-control" type="text" name="address" id="address" required>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input class="form-check-input" type="checkbox" name="check" id="check" >
+              <label class="from-check-label" for="check">Remember Me</label>
+            </div>
+
+            <div class="mb-3">
+              <label for="city" class="form-label">Select City</label>
+              <select class="form-select" name="city" id="city" required>
+                <option disabled selected>Select City</option>
+                <option value="Dhaka">Dhaka</option>
+                <option value="rajshahi">Rajshahi</option>
+                <option value="khulna">Khulna</option>
+              </select>
+
+
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">+880</span>
+              <input type="tel" class="form-control" placeholder="phone number" aria-label="Username"
+                aria-describedby="basic-addon1" required>
+            </div>
+
+
+            <div class="mb-3">
+              <input class="btn btn-primary" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+
+  </main>
+
+  <footer>
+
+  </footer>
+  <script src="js/bootstrap.min.js"></script>
+  <script> 
+
+    // let form= document.querySelector("form");
+   
+    // form.addEventListener("submit", function(e){
+    //    if(!form.validated){
+    //       e.preventDefault()
+    //    }
+
+    //    form.classList.add("was-validated");
+    // });
+
+  </script>
+</body>
+
+</html>

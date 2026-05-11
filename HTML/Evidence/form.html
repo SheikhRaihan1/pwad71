@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Form Design</title>
+    <style>
+        /* body {
+            font-family: Arial;
+            background: #f5f5f5;
+        }
+        .container {
+            width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 15px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+        }
+        .row {
+            display: flex;
+            gap: 10px;
+        }
+        .row div {
+            flex: 1;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Student Registration Form</h2>
+
+        <form>
+
+            <!-- Personal Info -->
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <label>Full Name</label>
+                <input type="text" required placeholder="Enter your name">
+                <br> <br>
+                <label>Email</label>
+                <input type="email" required>
+                <br> <br>
+                <label>Password</label>
+                <input type="password" required minlength="6">
+                <br> <br>
+                <label>Phone</label>
+                <input type="tel" pattern="[0-9]{11}" placeholder="01XXXXXXXXX">
+                <br> <br>
+                <div class="row">
+                    <div>
+                        <label>Date of Birth</label>
+                        <input type="date">
+                    </div>
+                    <div>
+                        <label>Age</label>
+                        <input type="number" min="10" max="60">
+                    </div>
+                </div>
+                <br> <br>
+                <label>Gender</label>
+                <input type="radio" name="gender"> Male
+                <input type="radio" name="gender"> Female
+
+            </fieldset>
+
+            <!-- Education -->
+            <fieldset>
+                <legend>Education</legend>
+
+                <label>Department</label>
+                <select>
+                    <option>--Select--</option>
+                    <option>CSE</option>
+                    <option>BBA</option>
+                    <option>EEE</option>
+                </select>
+ <br> <br>
+                <label>Skills</label>
+                <input type="checkbox"> HTML
+                <input type="checkbox"> CSS
+                <input type="checkbox"> JavaScript
+ <br> <br>
+                <label>Upload CV</label>
+                <input type="file">
+
+            </fieldset>
+
+            <!-- Address -->
+            <fieldset>
+                <legend>Address</legend>
+
+                <label>City</label>
+                <input type="text">
+ <br> <br>
+                <label>Zip Code</label>
+                <input type="text" pattern="[0-9]{4}">
+            </fieldset>
+
+       
+          
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+</body>
+
+</html>

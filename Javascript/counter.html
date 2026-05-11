@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>counter</title>
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: beige;
+            border-radius: 5px;
+            border: none;
+            transition: background-color 1s;
+        }
+
+        .btn:hover {
+            background-color: rgb(237, 237, 141);
+        }
+        body{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        #counter_value{
+           text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1 id="counter_value">0</h1>
+
+        <button class="btn" id="increment_id">Increase</button>
+        <button class="btn" id="reset_id">Reset</button>
+        <button class="btn" id="decrement_id">Decrease</button>
+    </div>
+    <script>
+        let counter = 0;
+        let counter_value = document.getElementById("counter_value");
+        let increment = document.getElementById("increment_id");
+        let reset = document.getElementById("reset_id");
+        let decrement = document.getElementById("decrement_id");
+
+        increment.onclick = function () {
+            // alert()
+            // counter++
+            counter_value.innerText = counter;
+            console.log(counter);
+            
+        }
+        decrement.onclick = function () {
+            counter--;
+            counter_value.innerText = counter;
+        }
+        reset.onclick = function () {
+            counter = 0
+            counter_value.innerText = counter;
+        }
+
+
+    </script>
+</body>
+
+</html>

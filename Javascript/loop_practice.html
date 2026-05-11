@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>loop practice</title>
+</head>
+
+<body>
+      <h1>Times Table</h1>
+    
+
+      <input type="number" id="Number"> <br> <br>
+      <button id="btn">Submit</button> <br> <br>
+      <div id="output"></div>
+
+
+
+    <script>
+        // Loop Exercises 
+
+   
+
+
+
+
+        // 1. Print numbers from 1 to 50
+        function print1_to_50() {
+
+            for (let i = 1; i <= 50; i++) {
+                console.log(i);
+            }
+        }
+
+        //   print1_to_50()
+        // 2. Print even numbers from 2 to 100
+
+        function evenNumber() {
+            for (let i = 1; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    console.log(i);
+                }
+            }
+
+        }
+
+        //    evenNumber()
+
+        // 3. Print odd numbers from 1 to 99
+
+        //   for(let i = 1; i <= 100 ; i ++  ){
+        //       if( i % 2 != 0){
+        //           console.log( `Odd Number = ${i}`);
+        //       }else{
+        //          console.log( `Event Number = ${i}`);
+        //       }
+        //   }
+
+
+        // 4. Print numbers from 100 to 1
+
+        function reverse100() {
+            for (let i = 100; i >= 1; i--) {
+                console.log(i);
+
+            }
+        }
+
+        // reverse100()
+
+        // 5. Print the multiplication table of a given number
+
+        //    let num= Number( prompt("Give me a number"));
+        //    for(let i=1; i<=20; i++){
+        //       console.log(`${num} x ${i} = ${num * i} `);
+        //    }
+
+
+        //    document.getElementById("btn").onclick= ()=>{
+
+        //    let num=   document.getElementById("Number").value;
+
+        //    let abc="";
+        //    for(let i = 1; i<=10; i++){
+        //       abc+= `<div>${num} X ${i} = ${num * i} </div>`
+        //    }
+    
+        //    document.getElementById("output").innerHTML= abc;
+        //  }
+
+        // 6. Print the sum of numbers from 1 to 100
+
+        // let sum=0;
+
+        // for(let i = 1; i <=100; i++){
+        //     sum = sum + i;
+        // }
+        // console.log(sum);
+        
+        // 7. Print the factorial of a number
+
+         let fnum=6;
+         let result=1;
+
+         for(let i = 1; i<=fnum; i++){
+             result *= i;
+         }
+          console.log(result);
+          
+
+        // 8. Check if a number is prime
+
+         function isPrime(number){
+
+           if(number < 2 ) {return false}
+
+            for(let i= 2; i < number;  i++ ){
+                if( number % i == 0){
+                  return false;
+                }
+            }
+             
+            return true ;
+         }
+    
+        //  let n= Number( prompt("number"));
+        //  if(isPrime(n)){
+        //    console.log( n +" "+ " is prime number");
+        //  }else{
+        //    console.log(n +" "+" is not a prime number");
+        //  }
+         
+
+        // 9. Print prime numbers between 1 and 100
+
+      
+
+    </script>
+</body>
+
+</html>

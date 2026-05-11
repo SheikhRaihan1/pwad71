@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>position</title>
+
+    <style>
+         body{
+             height: 100vh;
+             width: 100vw;
+
+             display: grid;
+             place-items: center;
+         }
+        .box_relative {
+            height: 150px;
+            width: 250px;
+            background-color: rgb(8, 186, 8);
+            position: relative;
+           
+        }
+        .box_absolute {
+            height: 100px;
+            width: 100px;
+            background-color: red;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* static,absolute,relative,fixed,sticky*/
+        /* top bottom right left */ 
+    </style>
+
+</head>
+
+<body>
+    <div class="box_relative">
+        <div class="box_absolute"></div>
+    </div>
+
+</body>
+
+</html>

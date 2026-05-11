@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <form id="myForm">
+         <div>
+             <label for="name">Name</label>
+             <input type="text" name="name" id="my_name">
+         </div>
+         <div>
+             <label for="age">age</label>
+             <input type="text" name="age" id="my_age">
+         </div>
+
+         <div>
+             <label for="email">email</label>
+             <input type="text" name="email" id="my_email">
+         </div>
+         <div>
+             <label for="address">address</label>
+             <input type="text" name="address" id="my_address">
+         </div>
+           
+          <button type="submit" id="btn">Submit</button>
+          <button type="reset" id="btn_reset">Reset</button>
+      </form>
+
+         <h3 id="p_Name"></h3>
+         <h3 id="p_Age"></h3>
+         <h3 id="p_Email"></h3>
+         <h3 id="p_Address"></h3>
+      <script>
+            document.getElementById("btn").onclick=function(a){
+               a.preventDefault();
+
+               let name=document.getElementById("my_name").value;
+               let age=document.getElementById("my_age").value;
+               let email=document.getElementById("my_email").value;
+               let address=document.getElementById("my_address").value;
+
+               
+               document.getElementById("p_Name").innerText=`Name:${name}`;
+               document.getElementById("p_Age").innerText=`Age:${age}`;
+               document.getElementById("p_Email").innerText=`Email:${email}`;
+               document.getElementById("p_Address").innerText=`Address:${address}`;
+
+               document.getElementById("my_name").value="";
+               document.getElementById("my_age").value="";
+               document.getElementById("my_email").value="";
+               document.getElementById("my_address").value="";
+               
+            }
+      </script>
+</body>
+</html>

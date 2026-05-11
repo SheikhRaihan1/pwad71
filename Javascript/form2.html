@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" id="f" name="f" style="width: 400px; margin: 0 auto;">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" />
+
+        </div>
+        <div>
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" />
+        </div>
+        <div>
+            <label for="city">City</label>
+            <select name="city" id="city">
+                <option value="Dhaka">Dhaka</option>
+                <option value="Khulna">Khulna</option>
+                <option value="Rajshahi">Rajshahi</option>
+                <option value="Barishal">Barishal</option>
+            </select>
+        </div>
+        <div class="checkbox">
+            <label for="">Gender</label>
+            <label for="Male">
+                Male
+                <input type="radio" id="Male" name="gender" value="Male" checked />
+            </label>
+            <label for="Female">
+                Female
+                <input type="radio" id="Female" name="gender" value="Female" />
+            </label>
+        </div>
+
+        <div class="checkbox">
+            <label for="Bangla">
+                Bangla
+                <input type="checkbox" id="Bangla" name="subject" value="Bangla" />
+            </label>
+            <label for="English">
+                English
+                <input type="checkbox" id="English" name="subject" value="English" />
+            </label>
+            <label for="Math">
+                Math
+                <input type="checkbox" id="Math" name="subject" value="Math" />
+            </label>
+            <label for="ICT">
+                ICT
+                <input type="checkbox" id="ICT" name="subject" value="ICT" />
+            </label>
+        </div>
+        <div>
+            <label for="comment">Comment</label>
+            <textarea id="comment" name="comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
+
+
+    <script>
+        //  document.getElementById("f").addEventListener("submit", function(){});
+
+        let form = document.getElementById("f");
+        form.onsubmit = function (e) {
+            e.preventDefault();
+            // let name= document.querySelector("#name").value;
+            let name2 = form.name.value;
+            let email = form.email.value;
+            let city = form.city.value;
+            let genders = form.gender;
+            let selectedGender = "";
+            let subjects = form.subject;
+            let selectedSubject = "";
+            let comment = form.comment.value;
+
+            for (gender of genders) {
+                if (gender.checked) {
+                    selectedGender = gender.value;
+                }
+            }
+            for (subject of subjects) {
+                if (subject.checked) {
+                    selectedSubject += subject.value + ",";
+                }
+            }
+
+            console.log(selectedSubject);
+            // console.log(name2, email, city);
+
+
+            let w = window.open("", "_blank", "width=200,height=200");
+            w.document.write(`<h4>Name:${name2}</h4> `);
+            w.document.write(`<p>Email:${email}</p>`);
+            w.document.write(`<p>City:${city}</p>`);
+            w.document.write(`<p>Gender:${selectedGender}</p>`);
+            w.document.write(`<p>Subject:${selectedSubject}</p>`);
+            w.document.write(`<p>Comment:${comment}</p>`);
+            w.document.write(`<button onclick="self.close()">close</button>`);
+            w.document.write(`<button onclick="print()">print</button>`);
+
+
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

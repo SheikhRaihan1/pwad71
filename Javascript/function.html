@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+    <style>
+         .colorRed{
+            color: red;
+         }
+    </style>
+</head>
+<body>
+    
+
+<script>
+// 1. Function Declaration
+
+// function fullName(firstName, lastName){  //paramiter 
+//     // let firstName="Masud";
+//     // let lastName= "Hasan";
+//     // console.log(firstName + " "+ lastName);
+//     document.write(`<h1 class="colorRed">Hello ${firstName} ${lastName} !</h1>`);
+   
+// }
+// fullName("Masud", "Hasan");
+// fullName("Rajib", "Ahmed");
+
+// function add(a,b){
+//     console.log("before return ");
+//     return a + b; 
+//    console.log("after return "); 
+// }
+// function sub(a,b){
+//     return a - b;
+// }
+ 
+// console.log(add(200,50));
+// console.log(sub(200,50));
+
+ 
+function greet(name="Guest"){
+   return `Assalmu Alikum ${name}`
+}
+
+console.log(greet("Hasin"));
+console.log(greet());
+
+
+document.write(`<div>${greet("Hasin")}</div>`)
+
+// add(200,50);
+// sub(200,50);
+
+// function calculator(a, op ,b){
+//     if(op == "+"){
+//       return a + b;
+//     }else if(op == "-"){
+//        return a - b;
+//     }else if(op == "*"){
+//        return a * b;
+//     }else if(op == "/"){
+//        return a / b;
+//     }
+// }
+// console.log(calculator(200,"*",100));
+
+
+// function totalCost(price,qty){
+//     return price*qty;
+// }
+
+// console.log(`${totalCost(20,6)}tk`);
+// console.log(totalCost(20,6)+"tk");
+
+
+
+// same arrow function 
+
+// const abc = function (name){
+//    return name;
+// }
+
+// const fullname = (firstName, lastName)=>{
+//     return firstName + " " + lastName;
+// }
+
+// const fullname = (firstName, lastName) => firstName + " " + lastName;
+// console.log(fullname("Hamid", "Hasan"));
+
+
+// const fullname = firstName  =>  firstName;
+// console.log(fullname("Hamid"));
+
+// const fullname = ()  =>  "Hello World";
+// console.log(fullname());
+
+
+
+// callback function 
+
+function hello(name, Callback){
+    return `Hello ${name}  ${Callback}` 
+} 
+
+function goTo(){
+  return "Go to Your Room"
+}
+
+ console.log(hello("hasan", goTo()));
+
+
+function hello2(name, Callback){
+   return `Hello ${name}  ${Callback()}` 
+}
+
+let output = hello2("Masud", () => {return "Valu hoye Jao"} )
+console.log(output);
+
+
+
+
+// (
+//  function IIEF(){
+//     alert("IIFE")
+// }   
+// )()
+
+
+
+// // 2. Function with Default Parameters
+// function greetUser(name = "Guest") {
+//     return "Welcome, " + name + "!";
+// }
+
+
+// // 3. Anonymous Function
+// const anonymousFunc = function() {
+//     console.log("This is an anonymous function.");
+// };
+// anonymousFunc();
+
+// // 4. Function Expression
+// const add = function(a, b) {
+//     return a + b;
+// };
+
+// // 5. Arrow Function
+// const multiply = (a, b) => a * b;
+
+// // 6. Arrow Function with Block Body
+// const subtract = (a, b) => {
+//     return a - b;
+// };
+
+// // 7. Immediately Invoked Function Expression (IIFE)
+// (function() {
+//     console.log("This function runs immediately!");
+// })();
+
+// 8. Callback Function
+
+
+
+
+//9. Recursive function 
+function start(){
+    setTimeout(() => {
+        let date= new Date();
+        console.log( date.toLocaleTimeString())
+        start()
+    }, 1000);
+}
+start()
+let time=5;
+ function cdf(name){
+    document.write(`${name}`);
+    time--;
+    if(time == 0){
+        return;
+    }
+    cdf("Masud Hasan");
+}
+cdf("Masud Hasan");
+
+    </script>
+</body>
+</html>

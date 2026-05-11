@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced HTML Table Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 40px;
+            width: 80%;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+        h2 {
+            background: #eee;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>HTML Table Practice</h1>
+
+    <!-- Practice 1 -->
+    <h2>1. Student Result Table</h2>
+    <table>
+        <tr>
+            <th rowspan="2">Student Name</th>
+            <th colspan="2">Math</th>
+            <th colspan="2">Science</th>
+            <th rowspan="2">Total</th>
+            <th rowspan="2">Grade</th>
+        </tr>
+        <tr>
+            <th>Theory</th>
+            <th>Practical</th>
+            <th>Theory</th>
+            <th>Practical</th>
+        </tr>
+        <tr>
+            <td>Rahim</td>
+            <td>80</td>
+            <td>15</td>
+            <td>70</td>
+            <td>20</td>
+            <td>185</td>
+            <td>A</td>
+        </tr>
+    </table>
+
+    <!-- Practice 2 -->
+    <h2>2. Weekly Class Routine</h2>
+    <table>
+        <tr>
+            <th>Time</th>
+            <th>Sunday</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+        </tr>
+        <tr>
+            <td>9-10</td>
+            <td rowspan="2">Math</td>
+            <td>English</td>
+            <td>ICT</td>
+        </tr>
+        <tr>
+            <td>10-11</td>
+            <td rowspan="2">Physics</td>
+            <td>Biology</td>
+        </tr>
+        <tr>
+            <td>11-12</td>
+            <td>Bangla</td>
+            <td>Chemistry</td>
+        </tr>
+        <tr>
+            <td>12-1</td>
+            <td colspan="3">Break</td>
+        </tr>
+    </table>
+
+    <!-- Practice 3 -->
+    <h2>3. Invoice Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Mouse</td>
+                <td>2</td>
+                <td>500</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>Keyboard</td>
+                <td>1</td>
+                <td>800</td>
+                <td>800</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3">Grand Total</td>
+                <td>1800</td>
+            </tr>
+        </tfoot>
+    </table>
+
+   
+
+    <!-- Practice 4 -->
+    <h2>4. Company Structure</h2>
+    <table>
+        <tr>
+            <th rowspan="2">Department</th>
+            <th colspan="2">Employees</th>
+        </tr>
+        <tr>
+            <th>Male</th>
+            <th>Female</th>
+        </tr>
+        <tr>
+            <td>IT</td>
+            <td>10</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>HR</td>
+            <td>4</td>
+            <td>6</td>
+        </tr>
+    </table>
+
+    
+
+</body>
+</html>
+```
