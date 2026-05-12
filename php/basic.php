@@ -61,7 +61,7 @@ echo $students[2];
 echo "<br>";
 // associative array 
 $jahid= ["name" => "Jahid Mahmud", "age"=>23, "address"=> "Dhaka"];
-// $jahid= (object)  ["name" => "Jahid Mahmud", "age"=>23, "address"=> "Dhaka"];
+$jahid= (object)  ["name" => "Jahid Mahmud", "age"=>23, "address"=> "Dhaka"];
 
 // echo $jahid["address"];
 // echo "<br>";
@@ -119,9 +119,9 @@ $d=50;
 
 
 
-$result= $a+$b;
+$result=(bool)  $a+$b;
 
-
+var_dump($jahid);
 
 
 

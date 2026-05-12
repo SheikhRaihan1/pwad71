@@ -18,16 +18,20 @@
             let todo_Value = document.getElementById("todo");
             let list = document.getElementById("list");
             if (todo_Value.value == "") {
-               alert("pls enter the value");
+                alert("pls enter the value");
             } else {
                 list.innerHTML += `<li>${todo_Value.value}  <button onclick="deleteItem(this)" >Delete</button></li>`;
                 todo_Value.value = "";
             }
+        });
 
-        })
+
         function deleteItem(abc) {
             abc.parentElement.remove();
         }
+
+        
+     
     </script>
 </body>
 
