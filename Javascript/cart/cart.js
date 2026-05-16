@@ -1,6 +1,7 @@
 
 print_cart()
 subtotal()
+item_count()
 
 function print_cart(){
    let cart = JSON.parse(localStorage.getItem("product_cart")) ?? [];
@@ -48,13 +49,14 @@ function print_cart(){
    document.querySelector(".show_products").innerHTML= html;
    let item= cart.length > 1 ? "items": "item";
    document.querySelector(".item_count").innerText= cart.length +" "+ item;
+   item_count()
 }
 
 function subtotal(){
     let cart = JSON.parse(localStorage.getItem("product_cart")) ?? [];
     total =  cart.reduce( (acc, item)=> acc +=  (item.price * item.qty), 0 );
     console.log( total ); 
-    document.querySelector("#subtotal").innerText= total;
+    document.querySelector("#subtotal").innerText= `$${total}`;
 }
 
 function updateQuantityInc(id){
@@ -97,4 +99,16 @@ function deleteItem(id){
    localStorage.setItem("product_cart", JSON.stringify(cart));
    print_cart()
    subtotal()
+   
+}
+
+function item_count() {
+    let cart = JSON.parse(localStorage.getItem("product_cart"));
+    if (cart.length > 0) {
+        document.querySelector(".cart_items_count").innerHTML = `
+          <span class="position-absolute top-0 start-100 translate-middle badge badge-sm rounded-pill bg-danger">
+            ${cart.length}
+           </span>
+        `
+    }
 }
