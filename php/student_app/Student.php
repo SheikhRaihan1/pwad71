@@ -2,89 +2,99 @@
 
 class Student
 {
-  public $id;
-  public $name;
-  public $email;
-  public $gender;
-  public $mobile;
+   public $id;
+   public $name;
+   public $email;
+   public $gender;
+   public $mobile;
 
-  public function __construct($_id, $_name,$_email,$_gender,$_mobile)
-  {
-     $this->id= $_id;
-     $this->name= $_name;
-     $this->email= $_email;
-     $this->gender= $_gender;
-     $this->mobile= $_mobile;
-  }
-
-
-   function save(){
-      $data=PHP_EOL."$this->id,$this->name,$this->email,$this->gender,$this->mobile";
-      file_put_contents("students_data.txt",$data,FILE_APPEND);
-      //   print_r($data);
-  }
-
-  static function find($_id){
-        
-   $data= file("students_data.txt");
-   $result="";
-
-   foreach ($data as $key => $value) {
-      list($sid, $name, $email, $gender, $mobile)= explode(",", $value);
-
-      if($sid == $_id){
-         $result= compact("sid",  "name", "email", "gender", "mobile") ;
-      }
+   public function __construct($_id, $_name, $_email, $_gender, $_mobile)
+   {
+      $this->id = trim($_id);
+      $this->name = trim($_name);
+      $this->email = trim($_email);
+      $this->gender = trim($_gender);
+      $this->mobile = trim($_mobile);
    }
 
-   return  $result;
 
-  }
+   function save()
+   {
+      $data = PHP_EOL . "$this->id,$this->name,$this->email,$this->gender,$this->mobile";
+      file_put_contents("students_data.txt", $data, FILE_APPEND);
 
-   static function show()
-    {
-        $data = file("students_data.txt");
-        $html="
-              <table class='table'>
-                 <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Gender</th>
-                        <th>Phone</th>
-                        <th>Action</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-        ";
-        foreach ($data as $key => $value) {
-         list($id, $name, $email, $gender, $mobile) = explode("," , $value);
-          $html.="
-              <tr>
-                    <td>$id</td>
-                    <td>$name</td>
-                    <td>$email</td>
-                    <td>$gender</td>
-                    <td>$mobile</td>
-                    <td> Edit | Delete </td>
-                </tr>
-          ";
-        }
-       return   $html.="</tbody> </table>";
-    }
+      return "Saved successfully";
+   }
+
+   static function find($_id)
+   {
+
+      $data = file("students_data.txt");
+      $result = [];
+
+      foreach ($data as $key => $value) {
+         list($sid, $name, $email, $gender, $mobile) = explode(",", $value);
+         if ($sid == $_id) {
+            $result = compact("sid",  "name", "email", "gender", "mobile");
+         }
+      }
+      if(count($result)){
+        return  $result;
+      }
+      return  $result;
+   }
+
+   static function all()
+   {
+      $data = file("students_data.txt");
+      return  $data;
+   }
+
+
+   function update()
+   {
+      $students = $this->getData();
+      $data = "";
+
+      foreach ($students as $student) {
+         list($id) = explode(",", $student);
+
+         if ($id == $this->id) {
+            $data .= "$this->id,$this->name,$this->email,$this->gender,$this->mobile" . PHP_EOL;
+         } else {
+            $data .= $student;
+         }
+      }
+
+      file_put_contents("students_data.txt", $data);
+
+
+      return "updated successfully";
+   }
+
+   static function delete($_id)
+   {
+      $students = file("students_data.txt");
+      $data = "";
+
+      foreach ($students as $key => $student) {
+         list($sid) = explode(",", $student);
+         if ($sid != $_id) {
+            $data .= $student;
+         }
+      }
+      file_put_contents("students_data.txt", $data);
+      return   "Deleted succesfully";
+   }
+
+
+   private function getData()
+   {
+      return file("students_data.txt",FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
+   }
 }
 
-//  $student= new Student(8,"Rasel","rasel@gmail.com","male", "011111111");
-
-//  $student->save();
+//  $student= new Student(2,"Kazi Ahmed","rasel@gmail.com","male", "011111111");
+//  $student->update();
 
 //  print_r( Student::find(2) );
-
-?>
-
-
-     
-
-
-   

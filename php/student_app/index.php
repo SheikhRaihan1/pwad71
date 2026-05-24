@@ -1,12 +1,23 @@
 <?php
 include_once("Student.php");
-
+$data=[];
 if(isset($_GET["btn_submit"])){
     $id= $_GET["sid"];
+    $data = Student::find($id) ?? [];
+    
+    
+   
+}
 
-    $data= Student::find($id);
+if(isset($_GET["id"])){
+    $id= $_GET["id"];
+
+    $data= Student::delete($id);
+
+    echo $data;
     
 }
+
 
 ?>
 
@@ -23,22 +34,71 @@ if(isset($_GET["btn_submit"])){
 
 <body>
     <div class="container">
+         <a class="btn btn-secondary" href="createStudent.php">Create Student</a>
         <div class="row">
             <div class="col-md-8">
                 <h1>All Students</h1>
-                <?php echo Student::show(); ?>
+
+                 <table class="table table-striped">
+                    <thead>
+                         <tr>
+                             <th>Id</th>
+                             <th>Name</th>
+                             <th>Email</th>
+                             <th>Gender</th>
+                             <th>Mobile</th>
+                             <th>Action</th>
+                         </tr>
+                    </thead>
+
+                    <tbody>
+                     <?php
+                      $students= Student::all();
+                     
+                      foreach($students as $student){
+                       list($id, $name,$email,$gender,$mobile)= explode(",", $student);
+
+                       echo "
+                       
+                        <tr>
+                             <td>$id</td>
+                             <td>$name</td>
+                             <td>$email</td>
+                             <td>$gender</td>
+                             <td>$mobile</td>
+                             <td>
+                                <a class='btn btn-info' href='update.php?id=$id'>Edit</a>
+                                <a onclick='return confirm(`are you sure`)' class='btn btn-danger' href='index.php?id=$id'>Delete</a>
+                             </td>
+                         </tr>
+                       
+                       
+                       ";
+                      }
+                      
+                  
+
+                     ?>
+                    </tbody>
+                 </table>
+
+
+
+
+
+               
             </div>
 
              <div class="col-md-4">
+                  <h3>Search Student</h3>
                  <form action="#" method="get">
-                     <label for="id">Id</label>
                      <input type="text" name="sid" id="id">
                      <input type="submit" name="btn_submit" id="">
                  </form>
 
-                 <h3>Student Data</h3>
-                  <?php echo  is_array($data) ? "":"Data Not found" ?>
-                  <table>
+               
+                  <?php echo  count($data)>0 ? "" :"Data Not found" ?>
+                  <table class="table">
                       <tr> 
                          <th>ID</th>
                          <th> <?php echo  $data["sid"]?? "" ?></th>
