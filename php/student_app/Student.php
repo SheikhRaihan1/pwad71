@@ -20,9 +20,9 @@ class Student
 
    function save()
    {
-      $data = PHP_EOL . "$this->id,$this->name,$this->email,$this->gender,$this->mobile";
-      file_put_contents("students_data.txt", $data, FILE_APPEND);
 
+      $data = "$this->id,$this->name,$this->email,$this->gender,$this->mobile".PHP_EOL;
+      file_put_contents("students_data.txt", $data, FILE_APPEND);
       return "Saved successfully";
    }
 
@@ -46,7 +46,7 @@ class Student
 
    static function all()
    {
-      $data = file("students_data.txt");
+      $data = file("students_data.txt",FILE_SKIP_EMPTY_LINES|FILE_IGNORE_NEW_LINES);
       return  $data;
    }
 
@@ -62,7 +62,7 @@ class Student
          if ($id == $this->id) {
             $data .= "$this->id,$this->name,$this->email,$this->gender,$this->mobile" . PHP_EOL;
          } else {
-            $data .= $student;
+            $data .= $student.PHP_EOL;
          }
       }
 
@@ -74,7 +74,7 @@ class Student
 
    static function delete($_id)
    {
-      $students = file("students_data.txt");
+      $students = file("students_data.txt",FILE_SKIP_EMPTY_LINES|FILE_IGNORE_NEW_LINES);
       $data = "";
 
       foreach ($students as $key => $student) {

@@ -3,19 +3,13 @@ include_once("Student.php");
 $data=[];
 if(isset($_GET["btn_submit"])){
     $id= $_GET["sid"];
-    $data = Student::find($id) ?? [];
-    
-    
-   
+    $data = Student::find($id) ?? []; 
 }
 
 if(isset($_GET["id"])){
     $id= $_GET["id"];
-
-    $data= Student::delete($id);
-
-    echo $data;
-    
+    $delete= Student::delete($id);
+    echo $delete;
 }
 
 
@@ -97,7 +91,7 @@ if(isset($_GET["id"])){
                  </form>
 
                
-                  <?php echo  count($data)>0 ? "" :"Data Not found" ?>
+                  <?php echo  count($data) > 0 ? "" :"Data Not found" ?>
                   <table class="table">
                       <tr> 
                          <th>ID</th>

@@ -1,6 +1,3 @@
-1 , Rashed Khan, rashed@gmail.com ,male, 0175555555 
-7 , Mahfuz  Alom, mahfuz@gmail.com ,male, 0175555555 
-8,Rasel2,rasel@gmail.com,male,011111111
-9,Hafiz,hafiz@gmail.com,male,0111113333333
-10,CCSL,ccsl61588@gmail.com,male,0111111
-13,CCSL,ccsl61588@gmail.com,male,0111113333333
+2,CCSL,ccsl61588@gmail.com,male,0111113333333
+2,CCSL,ccsl61588@gmail.com,female,0111113333333
+6,CCSL,ccsl61588@gmail.com,male,66666 666

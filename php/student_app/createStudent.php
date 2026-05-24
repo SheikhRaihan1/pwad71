@@ -1,6 +1,8 @@
 <?php 
 
   include_once("Student.php");
+
+  $errors=[];
   if(isset($_POST['btn_submit'])){
 
      $id= $_POST["id"];
@@ -9,14 +11,23 @@
      $gender= $_POST["gender"];
      $mobile= $_POST["mobile"];
 
-     print_r($_POST);
+   //   print_r($_POST);
 
-     $student= new Student($id,$name, $email,$gender, $mobile);
-     $success=  $student->save();
+     if($id == ""){
+      $errors["id"]= "Id must have given value";
+     }
 
-     echo  $success;
+     if(!count($errors)){
+       $student= new Student($id,$name, $email,$gender, $mobile);
+       $success=  $student->save();
+        
+       echo  $success;
+       header("location:index.php");
 
-     header("location:index.php");
+     }
+     
+
+    
 
 
 
@@ -55,6 +66,7 @@
        <div>
          <label class="form-label" for="id">ID</label> <br>
           <input class="form-control" type="text" name="id" id="id">
+          <span style="color:red"><?php echo isset($errors["id"]) ? "{$errors["id"]}":"" ?> </span> 
        </div>
        <div>
          <label  class="form-label"for="name">Name</label> <br>
