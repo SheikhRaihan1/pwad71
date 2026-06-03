@@ -1,13 +1,25 @@
 <?php
+session_start();
+
+ if(!$_SESSION["name"]){
+   header("location:login.php");
+ }
+
+
+
+
+
 include_once("Student.php");
+
+// print_r($_SESSION);
 $data=[];
 if(isset($_GET["btn_submit"])){
     $id= $_GET["sid"];
     $data = Student::find($id) ?? []; 
 }
 
-if(isset($_GET["id"])){
-    $id= $_GET["id"];
+if(isset($_GET["deleteid"])){
+    $id= $_GET["deleteid"];
     $delete= Student::delete($id);
     echo $delete;
 }
@@ -29,8 +41,10 @@ if(isset($_GET["id"])){
 <body>
     <div class="container">
          <a class="btn btn-secondary" href="createStudent.php">Create Student</a>
+         <a class="btn btn-secondary" href="logout.php">logout</a>
         <div class="row">
             <div class="col-md-8">
+                
                 <h1>All Students</h1>
 
                  <table class="table table-striped">
@@ -62,7 +76,7 @@ if(isset($_GET["id"])){
                              <td>$mobile</td>
                              <td>
                                 <a class='btn btn-info' href='update.php?id=$id'>Edit</a>
-                                <a onclick='return confirm(`are you sure`)' class='btn btn-danger' href='index.php?id=$id'>Delete</a>
+                                <a onclick='return confirm(`are you sure`)' class='btn btn-danger' href='index.php?deleteid=$id'>Delete</a>
                              </td>
                          </tr>
                        
