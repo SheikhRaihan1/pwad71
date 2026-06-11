@@ -10,9 +10,22 @@ $error = "";
 if (isset($_POST["btn_submit"])) {
     $name =trim($_POST["name"]);
     $password =$_POST["password"];
+
+
     $stmt= $db->query("select * from users where name='$name' and password='$password' ");
     $data= $stmt->fetch_object();
-    // print_r( $data);
+
+
+
+    // $stmt= $db->prepare("select * from users where name=? and password=?");
+    // $stmt->bind_param("ss" , $name, $password);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
+    // $data= $result ->fetch_object();
+      
+
+    
+    print_r( $data);
         if ( isset($data->name) ) {
             $_SESSION["name"] = $data->name;
             $_SESSION["id"] = $data->id;

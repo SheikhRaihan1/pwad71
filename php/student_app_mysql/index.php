@@ -9,10 +9,13 @@ require_once "db_config.php";
 include_once("Student.php");
 
 // print_r($_SESSION);
-$data=[];
+$founddata=(object)[];
 if(isset($_GET["btn_submit"])){
     $id= $_GET["sid"];
-    $founddata = Student::find($id) ?? []; 
+    $founddata="";
+    if($id != ""){
+        $founddata = Student::find($id) ?? []; 
+    }
 }
 
 if(isset($_GET["deleteid"])){
@@ -99,7 +102,7 @@ if(isset($_GET["deleteid"])){
                  </form>
 
                
-                  <?php echo  is_object($founddata) > 0 ? "" :"Data Not found" ?>
+                  <?php echo  is_object($founddata) ? "" :"Data Not found" ?>
                   <table class="table">
                       <tr> 
                          <th>ID</th>

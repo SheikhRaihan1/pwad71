@@ -16,7 +16,11 @@
      $email= $_POST["email"];
      $gender= $_POST["gender"];
      $mobile= $_POST["mobile"];
+
+
      $student= new Student($id,$name, $email,$gender, $mobile);
+
+     
      echo  $student->update();
      header("location:index.php");
     }

@@ -22,7 +22,7 @@
        $success=  $student->save();
         
        echo  $success;
-       header("location:index.php");
+      //  header("location:index.php");
 
      }
      
