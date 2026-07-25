@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
        <Routes>
         <Route path='/' element={<Layout/>}>
            <Route path='/' element={<Dashboard/>}  />
@@ -29,11 +29,9 @@ function App() {
            <Route path='/role/edit/:id'  element={<EditRole/>}/>
 
             <Route path='/count'  element={<Counter/>}/>
-
-             <Route path='/customer'  element={<CustomerIndex/>}/>
-             <Route path='/customer/create'  element={<CreateCustomer/>}/>
-             <Route path='/customer/edit/:id'  element={<EditCustomer/>}/>
-
+            <Route path='/customer'  element={<CustomerIndex/>}/>
+            <Route path='/customer/create'  element={<CreateCustomer/>}/>
+            <Route path='/customer/edit/:id'  element={<EditCustomer/>}/>
         </Route>
        </Routes>
       </BrowserRouter>
