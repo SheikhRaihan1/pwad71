@@ -14,13 +14,14 @@ class CustomerApi{
      echo json_encode(["success"=>"success"]);
   }
 
-  function save($data){
+  function save($data, $file){
 
      $customer= new Customer();
      $customer->name= $data['name'];
      $customer->email= $data['email'];
      $customer->mobile= $data['mobile'];
      $customer->address= $data['address'];
+     $customer->photo= upload($file["photo"], "../img", $data['name'].time());
      $customer->save();
 
     echo json_encode(["success"=>"Customer has been saved successfully"]);

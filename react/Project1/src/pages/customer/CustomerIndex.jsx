@@ -6,6 +6,7 @@ const CustomerIndex = () => {
 
  const [customers, setCustomers]= useState([]);
  const baseUrl= import.meta.env.VITE_API_BASE_URL;
+ const photoUrl= import.meta.env.VITE_PHOTO_BASE_URL;
 
  function fetchcustomer(){
     axios({
@@ -70,7 +71,7 @@ const CustomerIndex = () => {
                 <th>{++index}</th>
                 <th>{customer.name}</th>
                 <th>{customer.mobile}</th>
-                <th>{customer.photo}</th>
+                <th>  <img  width={100} src={`${photoUrl}/${customer.photo}`} alt="" srcset="" /> </th>
                 <th> 
                     <Link className='btn btn-info' to={`/customer/edit/${customer.id}`}>Edit</Link> 
                     <Link onClick={()=> confirm("are you sure") && deleteCustomer(customer.id)} className='btn btn-danger'>Delete</Link>
