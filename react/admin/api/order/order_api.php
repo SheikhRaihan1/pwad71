@@ -1,7 +1,17 @@
 <?php
 
-class OrderApi
+class OrderApi extends Api
 {
+    public function __construct()
+    {
+       if(!$this->authenticated()){   
+			if ($_SERVER['REQUEST_METHOD'] == 'GET') {			  
+				http_response_code(401);//Not Authorized
+		  	    die("401 Unauthorized");
+			}
+			
+         }	
+    } 
 
     function index()
     {

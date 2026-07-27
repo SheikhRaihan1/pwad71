@@ -1,8 +1,11 @@
 <?php
+
 require_once("../configs/db_config.php");
 require_once("../configs/app_config.php");
 
-header("Access-Control-Allow-Origin:*");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: http://localhost:5173");
+header("Access-Control-Allow-Credentials: true");
 header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH',"OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
@@ -619,52 +622,79 @@ function _parseDelete()
     return;
 }
 
-
-class Api{
-
-    function __construct(){
+class Api {
+    public function __construct() {
+        // 1. Properly handle CORS with Credentials (Cookies)
         
-        header("Access-Control-Allow-Origin:*");
-        header('Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH');
+        $origin = $_SERVER['HTTP_ORIGIN'] ?? '*';
+        header("Access-Control-Allow-Origin: $origin");
+        header("Access-Control-Allow-Credentials: true");
+        header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS");
         header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept, Authorization");
+        header("Content-Type: application/json; charset=UTF-8");
 
+        // 2. Handle OPTIONS preflight requests immediately
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            http_response_code(200);
+            exit();
+        }
     }
 
-    function get_header_token(){
-        $token = "";
-        $headers = apache_request_headers();
+    /**
+     * Extracts Bearer Token from request headers across various server environments (Apache, Nginx, FastCGI)
+     */
+    public function get_header_token(): string {
+        $authorizationHeader = null;
+        // Try standard PHP server variables first (works on Nginx, IIS, and Apache with mod_rewrite)
+        // if (isset($_SERVER['HTTP_AUTHORIZATION'])) {
+        //     $authorizationHeader = $_SERVER['HTTP_AUTHORIZATION'];
+        // } elseif (isset($_SERVER['REDIRECT_HTTP_AUTHORIZATION'])) {
+        //     $authorizationHeader = $_SERVER['REDIRECT_HTTP_AUTHORIZATION'];
+        // } else
 
-        if (isset($headers['Authorization'])) {
-            $authorizationHeader = $headers['Authorization'];
-            $matches = array();
-            if (preg_match('/Bearer (.+)/', $authorizationHeader, $matches)) {
-                if (isset($matches[1])) {
-                    $token = $matches[1];
-                }
+        if (function_exists('apache_request_headers')) {
+            $headers = apache_request_headers();
+            $headers = array_change_key_case($headers, CASE_LOWER);
+            if (isset($headers['authorization'])) {
+                $authorizationHeader = $headers['authorization'];
             }
         }
-        return $token;
+
+        if ($authorizationHeader && preg_match('/Bearer\s+(.+)/i', $authorizationHeader, $matches)) {
+            return trim($matches[1]);
+        }
+        return '';
     }
 
-    function authenticated(){
-      $token=$this->get_header_token();
-     
-      $jwt=new JWT();
-        if($jwt->is_valid($token)){
-            return true;
-        }else{
+    /**
+     * Validates if the request contains a valid access token
+     */
+    public function authenticated(): bool {
+        $token = $this->get_header_token();
+
+        if (empty($token)) {
             return false;
         }
+
+        $jwt = new JWT();
+        return $jwt->isValid($token); // Make sure method name matches JWT class (isValid vs is_valid)
     }
 
-    function authorized(){
-        $token=$this->get_header_token();
-       
-        $jwt=new JWT();
-          if($jwt->is_valid($token)){
-              return true;
-          }else{
-              return false;
-          }
-      }
+    /**
+     * Extracts and decodes current payload data if authenticated
+     */
+    public function get_authenticated_user() {
+        $token = $this->get_header_token();
+        
+        if (empty($token)) {
+            return null;
+        }
+
+        $jwt = new JWT();
+        if ($jwt->isValid($token)) {
+            return $jwt->getPayload($token);
+        }
+
+        return null;
+    }
 }
