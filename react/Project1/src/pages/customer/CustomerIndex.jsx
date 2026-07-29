@@ -1,6 +1,8 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { NavLink, Link } from 'react-router-dom';
+import { apiPrivate } from '../../api/api';
+import { UserDataContext } from '../../context/UserContext';
 
 const CustomerIndex = () => {
 
@@ -9,8 +11,9 @@ const CustomerIndex = () => {
  const photoUrl= import.meta.env.VITE_PHOTO_BASE_URL;
 
  function fetchcustomer(){
-    axios({
-        url:`${baseUrl}/customer/`,
+
+    apiPrivate({
+        url:`/customer/`,
         method:"get",
         data:{} 
      })

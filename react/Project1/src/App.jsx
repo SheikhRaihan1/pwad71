@@ -13,6 +13,11 @@ import Counter from './pages/dashboard/Counter'
 import CustomerIndex from './pages/customer/CustomerIndex'
 import CreateCustomer from './pages/customer/CreateCustomer'
 import EditCustomer from './pages/customer/EditCustomer'
+import { Login } from './pages/login/Login'
+import { AuthProvider } from './context/AuthContext'
+import { ProtectedRoute } from './context/ProtectedRoute'
+import { PublicRoute } from './context/PublicRoute'
+import UserContext from './context/UserContext'
 
 
 function App() {
@@ -21,8 +26,14 @@ function App() {
   return (
     <>
       <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AuthProvider>
        <Routes>
-        <Route path='/' element={<Layout/>}>
+        <Route element={<PublicRoute />}>
+          <Route path='/login' element={ <Login/>  }/>
+        </Route>
+        <Route element={<ProtectedRoute />}>
+        <Route path='/' element={  <Layout/>}>
+           {/* <Route path='/login' element={<LoginProject/>}  /> */}
            <Route path='/' element={<Dashboard/>}  />
            <Route path='/role'  element={<IndexRole/>}/>
            <Route path='/role/create'  element={<CreateRole/>}/>
@@ -33,7 +44,9 @@ function App() {
             <Route path='/customer/create'  element={<CreateCustomer/>}/>
             <Route path='/customer/edit/:id'  element={<EditCustomer/>}/>
         </Route>
+        </Route>
        </Routes>
+      </AuthProvider>
       </BrowserRouter>
 
 

@@ -1,8 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import SerchResult from './SerchResult';
+import UserSearch from './UserSearch';
+import DivWrap from './DivWrap';
 
 const Counter = () => {
  
   const [count,setCount]= useState(100);
+  const [searchValue, setSearchValue] = useState("")
 
   const [products, setProducts] = useState(
     [
@@ -13,7 +17,10 @@ const Counter = () => {
   ]
   )
 
-
+   useEffect(()=>{
+      console.log("use Effect rendered");
+      
+   }, [count])
 
 
   function increaseConut(){
@@ -31,33 +38,16 @@ const Counter = () => {
      <div>{count}</div>
      <button onClick={increaseConut}> Increase </button>
      <button onClick={decreaseConut}> Decrease </button>
-      <table className='table stripe'>
-         <thead>
-             <tr>
-                 <th>Id</th>
-                 <th>Name</th>
-                 <th>Price</th>
-             </tr>
-         </thead>
-         <tbody>
-            {
-               products.map((product)=>(
-                <tr key={product.id}>
-                    <th>{product.id}</th>
-                    <th>{product.name}</th>
-                    <th>{product.price}</th>
-                </tr>
-               ))
 
-            }
-         </tbody>
-      </table>
+       <UserSearch  setSearchValue={setSearchValue}  searchValue={searchValue}/>
+       <SerchResult  searchValue={searchValue} />
 
 
-
-
-
-
+       <DivWrap>
+          <div>ksdjkfjsd</div>
+           
+       </DivWrap>
+      
     </>
   )
 }

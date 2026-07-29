@@ -1,10 +1,7 @@
 
 <?php 
-  print_r($purchase_data);
-  print_r($purchase_details);
-
-
-
+//   print_r($purchase_data);
+//   print_r($purchase_details);
 ?>
 
 
