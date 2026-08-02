@@ -1,53 +1,58 @@
+@extends('layouts.backend.app')
 
+@section('title', 'Role page')
+@section('content')
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Roles</h1>
-    
-     @if (session("success"))
-         <span> {{session("success")}}</span>
-     @endif
+    @if (session('success'))
+        <div class="alert alert-success"> {{ session('success') }}</div>
+    @endif
+    <div class="d-flex justify-content-between mb-3">
+        <h3>Role List</h3>
+        <a class="btn btn-success " href="{{ route('roles.create') }}">Create Role</a>
+    </div>
 
-      <a href="{{route("roles.create")}}">Create Role</a>
-      <a href="{{route("testRoute")}}">test Role</a>
-      <a href="{{url("roles/test")}}">test Role2</a>
-
-     <table>
-         <tr>
-            <th>id</th>
-            <th>Name</th>
-            <th>action</th>
-         </tr>
-         @foreach ( $roles as $role)
+    <form class="input-group mb-3" action="" method="post">
+        @csrf
+        <input type="text" class="form-control" placeholder="search role..." >
+        <button class="btn btn-outline-secondary" type="submit" id="button">Button</button>
+    </form>
+    <table class="table table-striped border">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Name</th>
+                <th>description</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($roles as $role)
                 <tr>
-             <th> {{$role->id}} </th>
-             <th>{{$role->name}}</th>
-             <th>
-                
-                <a href="{{route("roles.show", $role->id)}}">Show</a>  
-                <a href="{{route("roles.edit", $role->id)}}">Edit</a>  
-                
-                 <form action="{{route("roles.destroy", $role->id)}}" method="post">
-                    @csrf
-                    @method("DELETE")
-                    <button type="submit"   onclick="confirm('are you sure')">Delete</button>
-                 </form>
-            
-            
-            
-            </th>
-         </tr>
-         @endforeach
+                    <td> {{ $role->id }} </td>
+                    <td>{{ $role->name }}</td>
+                    <td>{{ $role->description }}</td>
+                    <td class="btn-group">
+                        <a class="btn btn-info" href="{{ route('roles.show', $role->id) }}">Show</a>
+                        <a class="btn btn-secondary" href="{{ route('roles.edit', $role->id) }}">Edit</a>
 
-     </table>
+                        <form action="{{ route('roles.destroy', $role->id) }}" method="post">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit" onclick="confirm('are you sure')">Delete</button>
+                        </form>
 
 
-</body>
-</html>
+
+                    </td>
+                </tr>
+            @endforeach
+        </tbody>
+
+
+
+    </table>
+
+    <div class="d-flex justify-content-end">
+        {{ $roles->links() }}
+    </div>
+@endsection
